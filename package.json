@@ -5,7 +5,7 @@
   "description": "backend para app salon en MEVN",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node src/index.js",
     "dev": "node --watch ./src/index.js",
     "dev:postman": "node --watch ./src/index.js --postman",
     "seed:import": "node data/seed.js --import",
