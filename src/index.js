@@ -1,11 +1,11 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { db } from './src/config/db.js'
-import servicesRoutes from './src/routes/servicesRoutes.js'
-import authRoutes from './src/routes/authRoutes.js'
-import appointmentsRoutes from './src/routes/appointmentsRoutes.js'
-import usersRoutes from './src/routes/usersRoutes.js'
+import { db } from './config/db.js'
+import servicesRoutes from './routes/servicesRoutes.js'
+import authRoutes from './routes/authRoutes.js'
+import appointmentsRoutes from './routes/appointmentsRoutes.js'
+import usersRoutes from './routes/usersRoutes.js'
 
 // variables de entorno
 dotenv.config()
@@ -20,11 +20,11 @@ app.use(express.json())
 db()
 
 // configurar CORS
-const whiteList = [process.env.FRONTEND_URL]
+const whiteList = [process.env.FRONTEND_URL, undefined]
 
-if (process.argv[2] === '--postman') {
-    whiteList.push(undefined)
-}
+// if (process.argv[2] === '--postman') {
+//     whiteList.push(undefined)
+// }
 
 const corsOptions = {
     origin: function (origin, callback) {
